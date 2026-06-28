@@ -1,0 +1,20 @@
+local d = require("Shining_Holy_Nuclear_Tower.Shining_Holy_Nuclear_Tower_config")
+return {
+	TOWER_HOLY_NUCLEAR_NAME = "圣核法术阵列",
+	TOWER_HOLY_NUCLEAR_DESCRIPTION = "一座蕴含神圣核能的法术塔。",
+	TOWER_HOLY_NUCLEAR_SPECIAL = "非常神圣",
+	TOWER_HOLY_NUCLEAR_HOLY_BLAST_NOTE = "予以清除。",
+	TOWER_HOLY_NUCLEAR_HOLY_BLAST_NAME_1 = "神圣冲击",
+	TOWER_HOLY_NUCLEAR_HOLY_BLAST_NAME_2 = "神圣冲击II",
+	TOWER_HOLY_NUCLEAR_HOLY_BLAST_NAME_3 = "神圣冲击III",
+	TOWER_HOLY_NUCLEAR_HOLY_BLAST_DESCRIPTION_1 = string.format("每隔%d秒,召唤持续%d秒的光柱灼烧敌人，每%.2f秒对%d范围内敌人造成%d~%d点魔法伤害。", d.holy_blast_cooldown[1], d.holy_blast_duration[1], d.ultimate_damage_every, d.holy_blast_damage_radius, d.holy_blast_damage_min[1], d.holy_blast_damage_max[1]),
+	TOWER_HOLY_NUCLEAR_HOLY_BLAST_DESCRIPTION_2 = string.format("每隔%d秒,召唤持续%d秒的光柱灼烧敌人，每%.2f秒对%d范围内敌人造成%d~%d点魔法伤害。", d.holy_blast_cooldown[2], d.holy_blast_duration[2], d.ultimate_damage_every, d.holy_blast_damage_radius, d.holy_blast_damage_min[2], d.holy_blast_damage_max[2]),
+	TOWER_HOLY_NUCLEAR_HOLY_BLAST_DESCRIPTION_3 = string.format("每隔%d秒,召唤持续%d秒的光柱灼烧敌人，每%.2f秒对%d范围内敌人造成%d~%d点魔法伤害。", d.holy_blast_cooldown[3], d.holy_blast_duration[3], d.ultimate_damage_every, d.holy_blast_damage_radius, d.holy_blast_damage_min[3], d.holy_blast_damage_max[3]),
+	TOWER_HOLY_NUCLEAR_NUCLEAR_MELTDOWN_NOTE = "折射阵列-开启。",
+	TOWER_HOLY_NUCLEAR_NUCLEAR_MELTDOWN_NAME_1 = "折射阵列",
+	TOWER_HOLY_NUCLEAR_NUCLEAR_MELTDOWN_NAME_2 = "折射阵列II",
+	TOWER_HOLY_NUCLEAR_NUCLEAR_MELTDOWN_NAME_3 = "折射阵列III",
+	TOWER_HOLY_NUCLEAR_NUCLEAR_MELTDOWN_DESCRIPTION_1 = string.format("圣核法术阵列的攻击会造成神圣侵蚀效果，降低敌人%d点双抗，持续%d秒。已受到神圣侵蚀的敌人再次受到攻击时，触发光爆，向附近%d名随机敌人发射光束，造成%d-%d点魔法伤害。光爆对单个敌人的伤害会逐渐衰减。", d.erosion_armor_reduction * 100, d.erosion_duration, d.light_explosion_ray_count_base + d.light_explosion_ray_count_per_level, d.light_explosion_damage_min, d.light_explosion_damage_max),
+	TOWER_HOLY_NUCLEAR_NUCLEAR_MELTDOWN_DESCRIPTION_2 = string.format("圣核法术阵列的攻击会造成神圣侵蚀效果，降低敌人%d点双抗，持续%d秒。已受到神圣侵蚀的敌人再次受到攻击时，触发光爆，向附近%d名随机敌人发射光束，造成%d-%d点魔法伤害。光爆对单个敌人的伤害会逐渐衰减。", d.erosion_armor_reduction * 100, d.erosion_duration, d.light_explosion_ray_count_base + d.light_explosion_ray_count_per_level * 2, d.light_explosion_damage_min, d.light_explosion_damage_max),
+	TOWER_HOLY_NUCLEAR_NUCLEAR_MELTDOWN_DESCRIPTION_3 = string.format("圣核法术阵列的攻击会造成神圣侵蚀效果，降低敌人%d点双抗，持续%d秒。已受到神圣侵蚀的敌人再次受到攻击时，触发光爆，向附近%d名随机敌人发射光束，造成%d-%d点魔法伤害。光爆对单个敌人的伤害会逐渐衰减。", d.erosion_armor_reduction * 100, d.erosion_duration, d.light_explosion_ray_count_base + d.light_explosion_ray_count_per_level * 3, d.light_explosion_damage_min, d.light_explosion_damage_max),
+}
