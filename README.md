@@ -18,11 +18,11 @@
 
 | 属性 | 数值 |
 |------|------|
-| 价格 | 300 |
+| 价格 | 280 |
 | 类型 | 法术塔（Mage） |
 | 攻击范围 | 200 |
 | 攻击冷却 | 1.0秒 |
-| 普攻伤害 | 44~66（魔法） |
+| 普攻伤害 | 54~66（魔法） |
 | 伤害倍率 | 1.0 |
 | 冷却倍率 | 1.0 |
 
@@ -36,7 +36,7 @@
 
 发射一道从天而降的光柱，持续对范围内敌人造成魔法伤害。光柱会追踪目标移动，目标死亡后以80像素/秒的速度移动到下一个敌人位置。
 
-- 光柱伤害范围：40像素
+- 光柱伤害范围：50像素
 - 伤害间隔：0.25秒
 - 目标选择：优先血量最高的敌人
 - 目标切换：死亡后自动寻找新目标（优先血量上限最高），无目标则结束
@@ -44,9 +44,9 @@
 
 | 等级 | 价格 | 冷却 | 持续时间 | 每次伤害 | 索敌范围 |
 |------|------|------|----------|----------|----------|
-| 1 | 200 | 28秒 | 4秒 | 16~20 | 250 |
-| 2 | 160 | 26秒 | 5秒 | 20~24 | 300 |
-| 3 | 160 | 24秒 | 6秒 | 24~28 | 350 |
+| 1 | 250 | 30秒 | 4秒 | 12~16 | 200 |
+| 2 | 200 | 26秒 | 5秒 | 16~20 | 200 |
+| 3 | 200 | 22秒 | 6秒 | 20~24 | 200 |
 
 ---
 
@@ -71,16 +71,16 @@
 #### 光爆（叠层触发）
 
 同一敌人叠满2层神圣侵蚀后触发光爆：
-- 向180像素范围内随机敌人发射魔法光束
+- 向200像素范围内随机敌人发射魔法光束
 - 每道光束造成20~35魔法伤害
-- 射线数随等级增加：Lv1=3道、Lv2=4道、Lv3=5道
-- 触发后叠层清零
+- 射线数随等级增加：Lv1=2道、Lv2=3道、Lv3=4道
+- 触发后清除一层神圣侵蚀光爆计数
 
 | 等级 | 价格 | 减甲 | 真伤 | 光爆射线数 |
 |------|------|------|------|-----------|
-| 1 | 250 | 10%双抗 | 9/秒×2层 | 3 |
-| 2 | 170 | 10%双抗 | 9/秒×2层 | 4 |
-| 3 | 170 | 10%双抗 | 9/秒×2层 | 5 |
+| 1 | 225 | 10%双抗 | 7/秒×2层 | 2 |
+| 2 | 150 | 10%双抗 | 7/秒×2层 | 3 |
+| 3 | 150 | 10%双抗 | 7/秒×2层 | 4 |
 
 **与神圣冲击的联动**：升级折射阵列后，神圣冲击的光柱伤害也会附加神圣侵蚀和真伤modifier，加速叠层触发光爆。
 
@@ -115,25 +115,25 @@
 
 | 配置项 | 默认值 | 说明 |
 |--------|--------|------|
-| `tower_price` | 300 | 塔价格 |
+| `tower_price` | 280 | 塔价格 |
 | `damage_factor` | 1.0 | 伤害倍率 |
 | `cooldown_factor` | 1.0 | 冷却倍率 |
 | `attack_range` | 200 | 攻击范围（像素） |
 | `attack_cooldown` | 1.0 | 普攻冷却时间（秒） |
-| `attack_damage_min` | 44 | 普攻最小伤害 |
+| `attack_damage_min` | 54 | 普攻最小伤害 |
 | `attack_damage_max` | 66 | 普攻最大伤害 |
 
 ### 神圣冲击技能
 
 | 配置项 | 默认值 | 说明 |
 |--------|--------|------|
-| `holy_blast_price_base` | 200 | 基础价格 |
-| `holy_blast_price_inc` | 160 | 每级价格增量 |
-| `holy_blast_cooldown_1/2/3` | 28/26/24 | 各级冷却（秒） |
-| `holy_blast_damage_min_1/2/3` | 16/20/24 | 各级最小伤害 |
-| `holy_blast_damage_max_1/2/3` | 20/24/28 | 各级最大伤害 |
+| `holy_blast_price_base` | 250 | 基础价格 |
+| `holy_blast_price_inc` | 200 | 每级价格增量 |
+| `holy_blast_cooldown_1/2/3` | 30/26/22 | 各级冷却（秒） |
+| `holy_blast_damage_min_1/2/3` | 12/16/20 | 各级最小伤害 |
+| `holy_blast_damage_max_1/2/3` | 16/20/24 | 各级最大伤害 |
 | `holy_blast_duration_1/2/3` | 4/5/6 | 各级持续时间（秒） |
-| `holy_blast_damage_radius` | 40 | 伤害范围（像素） |
+| `holy_blast_damage_radius` | 50 | 伤害范围（像素） |
 | `ultimate_damage_every` | 0.25 | 光柱伤害间隔（秒） |
 | `ultimate_max_speed` | 80 | 光柱移动速度（像素/秒） |
 
@@ -141,15 +141,15 @@
 
 | 配置项 | 默认值 | 说明 |
 |--------|--------|------|
-| `nuclear_meltdown_price_base` | 250 | 基础价格 |
-| `nuclear_meltdown_price_inc` | 170 | 每级价格增量 |
+| `nuclear_meltdown_price_base` | 225 | 基础价格 |
+| `nuclear_meltdown_price_inc` | 150 | 每级价格增量 |
 | `erosion_duration` | 5 | 神圣侵蚀持续时间（秒） |
 | `erosion_armor_reduction` | 0.1 | 每次减甲比例（10%） |
-| `erosion_dps_damage` | 9 | 真伤每秒伤害 |
+| `erosion_dps_damage` | 7 | 真伤每秒伤害 |
 | `erosion_dps_damage_every` | 1 | 真伤间隔（秒） |
 | `light_explosion_damage_min` | 20 | 光爆最小伤害 |
 | `light_explosion_damage_max` | 35 | 光爆最大伤害 |
-| `light_explosion_ray_count_base` | 3 | 光爆基础射线数 |
+| `light_explosion_ray_count_base` | 1 | 光爆基础射线数 |
 | `light_explosion_ray_count_per_level` | 1 | 光爆每级增加射线数 |
 
 ### 视觉参数
@@ -159,28 +159,12 @@
 | `crystal_base_y` | 75 | 水晶漂浮基础Y位置（像素） |
 | `crystal_amplitude` | 6 | 水晶漂浮幅度（像素） |
 | `crystal_period` | 3.0 | 水晶漂浮周期（秒） |
-| `holy_blast_shake_amplitude` | 0.35 | 神圣冲击震动幅度 |
+| `holy_blast_shake_amplitude` | 0 | 神圣冲击震动幅度 |
 | `holy_blast_shake_extra_duration` | 0.5 | 神圣冲击震动额外时长（秒） |
 | `holy_blast_shake_freq_factor` | 4 | 神圣冲击震动频率因子 |
 | `sprite_tower_scale` | 0.62 | 主塔缩放比例 |
 
 ---
-
-## 技术说明
-
-- 塔模板继承自 `tower`，注册为 `tower_holy_nuclear`，类型 `holy_nuclear`
-- 普攻子弹使用 `arrow` 类型（莉莉丝弹道视觉），飞行时间0.333秒
-- 光柱子弹使用 `bullet` 类型，复用龙阳大招视觉资源（`hero_aurion_ulti`）
-- 光爆射线使用 `bullet` 类型（`ray_sunray` 日光塔射线视觉）
-- 神圣侵蚀 modifier（`mod_holy_light_erosion`）自定义 insert/update/remove 脚本，管理叠层计数和护甲削减
-- 神圣侵蚀真伤 modifier（`mod_holy_erosion_dps`）使用引擎内置 `scripts.mod_dps` 脚本
-- 每座塔实例创建独立的 `p_tint` shader 对象，避免多塔水晶颜色状态共享
-- 通过 hook `entity_db.load` 注入模板，hook `animation_db.load` 注册动画
-- 注入天赋系统（`kr1.upgrades`）的 `mage_towers`、`mage_tower_bolts`、`bolts` 列表，支持法术塔通用加成
-- 普攻优先攻击有神圣侵蚀叠层的敌人（叠层最多优先）
-
----
-
 ## 文件结构
 
 ```
@@ -190,13 +174,19 @@ Shining_Holy_Nuclear_Tower/
 ├── Shining_Holy_Nuclear_Tower_config.lua   # 配置文件（所有数值参数）
 ├── Shining_Holy_Nuclear_Tower_scripts.lua  # 脚本文件（modifier逻辑、光柱行为）
 ├── Shining_Holy_Nuclear_Tower_templates.lua# 模板文件（塔/子弹/modifier实体定义）
-└── _assets/image/
-    ├── Shining_Holy_Nuclear_Tower_game.lua # 贴图定义
-    ├── achievement_icons_0015.png          # 建造按钮图标
-    ├── crystal.png                         # 漂浮水晶贴图
-    ├── power_icon1.png                     # 神圣冲击技能图标
-    ├── power_icon2.png                     # 折射阵列技能图标
-    └── tower.png                           # 塔主体贴图
+├── animations.lua                          # 动画定义（当前为空）
+└── assets/
+    ├── images/
+    │   ├── Shining_Holy_Nuclear_Tower_game.lua # 贴图定义
+    │   ├── achievement_icons_0015.png          # 建造按钮图标
+    │   ├── crystal.png                         # 漂浮水晶贴图
+    │   ├── holy_nuclear_tower.png              # 塔主体贴图
+    │   ├── power_icon1.png                     # 神圣冲击技能图标
+    │   └── power_icon2.png                     # 折射阵列技能图标
+    ├── sounds/
+    │   └── sounds.lua                          # 音效定义
+    └── strings/
+        └── zh-Hans.lua                         # 中文本地化
 ```
 
 ---
@@ -208,6 +198,8 @@ Shining_Holy_Nuclear_Tower/
 - 与其他修改法术塔菜单的 mod 可能存在冲突
 
 ## 更新日志
+- **1.0.2**：
+- 文本修复
 - **1.0.1**：
 - 资源引用优化
 - **1.0.0**：
