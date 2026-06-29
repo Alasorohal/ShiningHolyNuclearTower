@@ -10,9 +10,9 @@ return {
 		"kr2",
 		"kr1",
 	},
-	last_used_at = 1782485150,
+	last_used_at = 1782647026,
 	name = "圣核法术阵列",
 	priority = 10,
 	url = "",
-	version = "1.0.2",
+	version = "1.0.3",
 }

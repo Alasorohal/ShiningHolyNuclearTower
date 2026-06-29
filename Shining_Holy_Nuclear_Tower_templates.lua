@@ -20,7 +20,8 @@ tt.tower.kind = TOWER_KIND_MAGE
 tt.tower.price = cfg.tower_price
 tt.tower.size = TOWER_SIZE_LARGE
 tt.tower.menu_offset = vec_2(0, 25)
-tt.tower.damage_factor = cfg.damage_factor
+tt.tower.damage_factor_min = cfg.damage_factor_min
+tt.tower.damage_factor_max = cfg.damage_factor_max
 tt.tower.cooldown_factor = cfg.cooldown_factor
 tt.info.enc_icon = 15
 tt.info.portrait = "info_portraits_towers_0008"
@@ -159,9 +160,9 @@ ray_explosion.render.sprites[1].name = "ray_sunray"
 ray_explosion.render.sprites[1].loop = false
 ray_explosion.render.sprites[1].z = Z_EFFECTS
 ray_explosion.sound_events.insert = "InfernalMageAttack"
-ray_explosion.ray_duration = 0.367
+ray_explosion.ray_duration = cfg.light_explosion_ray_duration
 ray_explosion.ray_y_scales = {0.4, 0.6, 0.8, 1}
-ray_explosion.bullet.hit_time = 0.1
+ray_explosion.bullet.hit_time = cfg.light_explosion_hit_time
 
 tt = RT("mod_slow_holy_light_explosion", "mod_slow")
 

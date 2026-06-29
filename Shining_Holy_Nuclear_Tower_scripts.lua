@@ -98,7 +98,8 @@ function mod_scripts.tower_holy_nuclear.update(this, store)
 
 					local crystal_offset = sprites[3].offset
 					local b = E:create_entity(aa.bullet)
-					b.bullet.damage_factor = tw.damage_factor
+					b.bullet.damage_min = b.bullet.damage_min * tw.damage_factor_min
+					b.bullet.damage_max = b.bullet.damage_max * tw.damage_factor_max
 					b.bullet.to:copy(target.pos)
 					if target.unit and target.unit.hit_offset then
 						b.bullet.to:add(target.unit.hit_offset)
@@ -127,7 +128,8 @@ function mod_scripts.tower_holy_nuclear.update(this, store)
 					b.bullet.from:copy(enemy.pos)
 					b.bullet.to:copy(enemy.pos)
 					b.pos:copy(enemy.pos)
-					b.bullet.damage_factor = tw.damage_factor
+					b.bullet.damage_factor_min = tw.damage_factor_min
+					b.bullet.damage_factor_max = tw.damage_factor_max
 					b.ray_duration = ab.duration
 					b.bullet.damage_min = ab.damage_min
 					b.bullet.damage_max = ab.damage_max
@@ -207,7 +209,7 @@ function mod_scripts.mod_holy_erosion_dps.insert(this, store)
 			start_pos:add(target.unit.hit_offset)
 		end
 
-		local targets = U.find_enemies_in_range_filter_on(start_pos, 200, E:get_template("ray_light_explosion").bullet.damage_flags, E:get_template("ray_light_explosion").bullet.damage_bans, function(e)
+		local targets = U.find_enemies_in_range_filter_on(start_pos, cfg.light_explosion_range, E:get_template("ray_light_explosion").bullet.damage_flags, E:get_template("ray_light_explosion").bullet.damage_bans, function(e)
 			return e.id ~= target.id
 		end)
 
@@ -378,11 +380,27 @@ function mod_scripts.bullet_holy_nuclear_ultimate.update(this, store)
 		end
 
 		dest.x, dest.y = this.pos.x, this.pos.y
+
+		-- 入场特效跟随光柱移动
+		if fx_in then
+			fx_in.pos:copy(this.pos)
+		end
+		if decal_in then
+			decal_in.pos:copy(this.pos)
+		end
 	end
 
 	-- 更新光柱位置（移动模式 - 保留视觉效果）
 	local function update_position_transit()
 		dest.x, dest.y = this.pos.x, this.pos.y
+
+		-- 入场特效跟随光柱移动
+		if fx_in then
+			fx_in.pos:copy(this.pos)
+		end
+		if decal_in then
+			decal_in.pos:copy(this.pos)
+		end
 
 		-- 地面贴花特效
 		if store.tick_ts > next_decal_ts then
